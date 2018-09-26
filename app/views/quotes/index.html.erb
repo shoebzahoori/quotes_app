@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>Quote</h2>
+
+     <button type="button" class="btn btn-info" id="refresh_button">
+      <span class="glyphicon glyphicon-search"></span> Refresh
+    </button>
+  <div class="table-responsive">  
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="table_header">Title</th>
+        <th class="table_header">Content</th>
+        <th class="table_header">link</th>
+      </tr>
+    </thead>
+        <tbody id="table_body"> 
+        <tr>
+            <td id="quote-title"><%= @quote["title"] %></td>
+            <td id="quote-content"><%= @quote["content"].try(:html_safe) %></td>
+            <td id="quote-link" ><%= link_to "#{@quote["link"]}" ,@quote["link"], target: :_blank  %></td>
+        </tr>
+        </tbody>
+  </table>
+  </div>
+</div>
+
+
